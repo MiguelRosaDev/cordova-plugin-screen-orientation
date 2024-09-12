@@ -89,7 +89,7 @@ public class CDVOrientation extends CordovaPlugin {
         } else if (orientation.equals(LANDSCAPE)) {
             activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
 
-            View decorView = this.getWindow().getDecorView();
+            View decorView = activity.getWindow().getDecorView();
             decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
