@@ -88,7 +88,14 @@ public class CDVOrientation extends CordovaPlugin {
             activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         } else if (orientation.equals(LANDSCAPE)) {
             activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
-
+        } else if (orientation.equals(PORTRAIT)) {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+        } else if (orientation.equals(LANDSCAPE_SECONDARY)) {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
+        } else if (orientation.equals(PORTRAIT_SECONDARY)) {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT);
+        } else if (orientation.equals(IMMERSIVE_LANDSCAPE)) {
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
             View decorView = activity.getWindow().getDecorView();
             decorView.setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -98,12 +105,6 @@ public class CDVOrientation extends CordovaPlugin {
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
             );
-        } else if (orientation.equals(PORTRAIT)) {
-            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
-        } else if (orientation.equals(LANDSCAPE_SECONDARY)) {
-            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
-        } else if (orientation.equals(PORTRAIT_SECONDARY)) {
-            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT);
         }
         
         callbackContext.success();
