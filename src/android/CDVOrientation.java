@@ -52,6 +52,7 @@ public class CDVOrientation extends CordovaPlugin {
     private static final String LANDSCAPE_SECONDARY = "landscape-secondary";
     private static final String PORTRAIT = "portrait";
     private static final String LANDSCAPE = "landscape";
+    private static final String IMMERSIVE_LANDSCAPE = "immersive-landscape";
     
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
